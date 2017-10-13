@@ -1,35 +1,34 @@
 <template>
-  <div id="app">
-    <h1>Harry Potter Magic Land</h1>
-    
-    <!-- <p>{{house}}</p> -->
+  <div id="app" class="container">
+    <h1>Harry Potter Elegant Housing</h1>
+    <hr>
+    <p>Welcome to {{ displayName }} a community where  {{displayDescription}}.</p>
 
 
-    <!-- <button v-on:click="randomHouse" id="sortButton" type="button" class="btn btn-primary">New House</button>
-  -->
-
-  <!-- <ul>
-      <li v-for="House in Houses">
-       <p> Welcome to {{ House.name }} a home where {{House.description}}.</p>
-    </li> -->
-    <!--  <li v-for="House in Houses">
-        {{ de.name }}
-    </li> -->
- <!--  </ul> -->
+      <button v-on:click="scrambleHouses" id="sortButton" type="button" class="btn btn-primary">New House</button>
 
   </div>
 </template>
 
 <script>
 
+var displayName = '';
+var displayDescription = '';
+var scrambleHouses = '';
+import house from './components/house.vue';
+
 export default {
   name: 'app',
+  components : {
+    house
+  },
   data: function() {
       return {
       Houses : [
         {
           name: 'Gryffindor',
           description: 'magic happens'
+
         },
         {
           name: 'Hufflepuff',
@@ -157,7 +156,9 @@ export default {
       ]
     };
   },
-    created : function() {
+    
+    methods: {
+      scrambleHouses : function() {
       // console.log(this.Houses);
       var json = this.Houses;
       //console.log(json.length);
@@ -167,24 +168,17 @@ export default {
       var house = this.Houses[rando];
       console.log(house.name);
       console.log(house.description);
+      this.displayName = house.name;
+      this.displayDescription = house.description;
+
       }
+    },
+    created : function() {
+    return scrambleHouses;
+    }
 
 
-    // var randomnum = Math.floor((Math.random() * 3));
-    // console.log(json[randomnum].first_name);
-      
-      //var rando = items[Math.floor(Math.random()*items.length)];
-    
-
-    // scramble : function (){
-    //   alert('Welcome to the sorting hat!!!!')
-    // },
-    // beforeMount(){
-    // this.scramble();
-  //}
-  
- };
-
+  };  
 
 </script>
 
@@ -193,14 +187,22 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: left;
-  color: #2c3e50;
+  text-align: center;
+  color: ;
   margin-top: 60px;
   margin-left: 30px;
 }
 
-h1, h2 {
+h1 {
   font-weight: normal;
+  font-family: 'Anton', sans-serif;
+}
+
+h2 {
+  font-weight: lighter;
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding-top: 10%;
+  text-align: center;
 }
 
 ul {
