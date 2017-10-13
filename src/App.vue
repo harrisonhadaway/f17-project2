@@ -1,33 +1,158 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <h1>Harry Potter Magic Land</h1>
+    
+  <ul>
+      <li v-for="House in Houses">
+       <p> Welcome to {{ House.name }} a home where {{House.description}}.</p>
+    </li>
+    <!--  <li v-for="House in Houses">
+        {{ de.name }}
+    </li> -->
+  </ul>
+
   </div>
 </template>
 
 <script>
 export default {
   name: 'app',
-  data () {
+  data: function() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+  'Houses': [
+    {
+      name: 'Gryffindor',
+      description: 'magic happens'
+    },
+    {
+      name: 'Hufflepuff',
+      description: 'things blow up'
+    },
+    {
+      name: 'Ravenclaw',
+      description: 'we claw you when you enter'
+    },
+    {
+      name: 'Slytherin',
+      description: 'snakes are our pets'
+    }
+
+  ],
+
+  'Questions': [
+
+    { 
+      text: 'What is your favorite color?',
+      answers: [
+        {
+          text: 'Scarlet',
+          house: 'Gryffindor'
+        },
+        {
+          text: 'Yellow',
+          house: 'Hufflepuff'
+        },
+        {
+          text: 'Blue',
+          house: 'Ravenclaw'
+        },
+        {
+          text: 'Green',
+          house: 'Slytherin'
+        }
+      ]
+    },
+    { 
+      text: 'What is your favorite animal?',
+      answers: [
+        {
+          text: 'Lion',
+          house: 'Gryffindor'
+        },
+        {
+          text: 'Badger',
+          house: 'Hufflepuff'
+        },
+        {
+          text: 'Eagle',
+          house: 'Ravenclaw'
+        },
+        {
+          text: 'Snake',
+          house: 'Slytherin'
+        }
+      ]
+    },
+    { 
+      text: 'What kind of person do you try to be?',
+      answers: [
+        {
+          text: 'Brave',
+          house: 'Gryffindor'
+        },
+        {
+          text: 'Loyal',
+          house: 'Hufflepuff'
+        },
+        {
+          text: 'Witty',
+          house: 'Ravenclaw'
+        },
+        {
+          text: 'Cunning',
+          house: 'Slytherin'
+        }
+      ]
+    },
+    { 
+      text: 'Who is your favorite witch or wizard?',
+      answers: [
+        {
+          text: 'Albus Dumbledore',
+          house: 'Gryffindor'
+        },
+        {
+          text: 'Newt Scamander',
+          house: 'Hufflepuff'
+        },
+        {
+          text: 'Garrick Ollivander',
+          house: 'Ravenclaw'
+        },
+        {
+          text: 'Tom Riddle',
+          house: 'Slytherin'
+        }
+      ]
+    },
+    { 
+      text: 'What is your favorite Berty Bott\'s flavor?',
+      answers: [
+        {
+          text: 'Grape',
+          house: 'Gryffindor'
+        },
+        {
+          text: 'Horseradish',
+          house: 'Hufflepuff'
+        },
+        {
+          text: 'Roast Beef',
+          house: 'Ravenclaw'
+        },
+        {
+          text: 'Spinach',
+          house: 'Slytherin'
+        }
+      ]
+    }
+
+  ]
+
+};
     }
   }
-}
+
 </script>
 
 <style>
