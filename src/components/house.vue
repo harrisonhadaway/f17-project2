@@ -51,8 +51,8 @@ var displayDescription = '';
 			  	var rando = Math.floor(Math.random()*json.length);
 			  	//console.log(rando);
 			  	var house = this.Houses[rando];
-			  	console.log(house.name);
-			  	console.log(house.description);
+			  	//console.log(house.name);
+			  	//console.log(house.description);
 			  	this.displayName = house.name;
 			  	this.displayDescription = house.description;
 		  	},
@@ -76,7 +76,7 @@ var displayDescription = '';
 		position: center;
 		text-align: center;
 		padding-top: 30px;		
-		background-color : #F8F8FF;
+		background-color : #D2B48C	;
 	}
 
 	.btn {
