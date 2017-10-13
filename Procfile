@@ -1,1 +1,2 @@
-web: webpack-dev-server
+web: node app/index.js
+

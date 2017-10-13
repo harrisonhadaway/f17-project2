@@ -26,5 +26,13 @@
     "webpack-dev-server": "^2.9.1"
   },
   "main": "webpack.config.js",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harrisonhadaway/f17-project2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/harrisonhadaway/f17-project2/issues"
+  },
+  "homepage": "https://github.com/harrisonhadaway/f17-project2#readme"
 }
